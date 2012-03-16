@@ -1,0 +1,28 @@
+{
+  "name": "connect-flash",
+  "version": "0.0.0",
+  "description": "Flash message middleware for Connect.",
+  "author": { "name": "Jared Hanson", "email": "jaredhanson@gmail.com", "url": "http://www.jaredhanson.net/" },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jaredhanson/connect-flash.git"
+  },
+  "bugs": {
+    "url": "http://github.com/jaredhanson/connect-flash/issues"
+  },
+  "main": "./lib",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "vows": "0.6.x"
+  },
+  "scripts": {
+    "test": "NODE_PATH=lib node_modules/.bin/vows test/*-test.js"
+  },
+  "engines": { "node": ">= 0.4.0" },
+  "licenses": [ {
+    "type": "MIT",
+    "url": "http://www.opensource.org/licenses/MIT" 
+  } ],
+  "keywords": ["connect", "express", "flash", "messages"]
+}

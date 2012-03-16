@@ -1,0 +1,19 @@
+NODE = node
+TEST = vows
+TESTS ?= test/*-test.js
+
+test:
+	@NODE_ENV=test NODE_PATH=lib $(TEST) $(TEST_FLAGS) $(TESTS)
+
+docs: docs/api.html
+
+docs/api.html: lib/connect-flash/*.js
+	dox \
+		--title connect-flash \
+		--desc "Flash message middleware for Connect" \
+		$(shell find lib/connect-flash/* -type f) > $@
+
+docclean:
+	rm -f docs/*.{1,html}
+
+.PHONY: test docs docclean
