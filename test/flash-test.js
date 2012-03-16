@@ -8,6 +8,9 @@ function MockRequest() {
   this.session = {};
 }
 
+function MockRequestWithoutSession() {
+}
+
 function MockResponse() {
 }
 
@@ -92,6 +95,33 @@ vows.describe('flash').addBatch({
       'should return empty array for flash type with no messages' : function(err, req, res) {
         var msgs = req.flash('what');
         assert.lengthOf(msgs, 0);
+      },
+    },
+    
+    'when handling a request without a session': {
+      topic: function(flash) {
+        var self = this;
+        var req = new MockRequestWithoutSession();
+        var res = new MockResponse();
+        
+        function next(err) {
+          self.callback(err, req, res);
+        }
+        process.nextTick(function () {
+          flash(req, res, next)
+        });
+      },
+      
+      'should not error' : function(err, req, res) {
+        assert.isNull(err);
+      },
+      'should add a flash function' : function(err, req, res) {
+        assert.isFunction(req.flash);
+      },
+      'should throw when attempting to set a flash message' : function(err, req, res) {
+        assert.throws(function() {
+          req.flash('error', 'Something went wrong');
+        });
       },
     },
   },
