@@ -98,6 +98,32 @@ vows.describe('flash').addBatch({
       },
     },
     
+    'when handling a request with an existing flash function': {
+      topic: function(flash) {
+        var self = this;
+        var req = new MockRequest();
+        req.flash = function(type, msg) {
+          this.session.flash = 'I Exist'
+        }
+        var res = new MockResponse();
+        
+        function next(err) {
+          self.callback(err, req, res);
+        }
+        process.nextTick(function () {
+          flash(req, res, next)
+        });
+      },
+      
+      'should not error' : function(err, req, res) {
+        assert.isNull(err);
+      },
+      'should not overwrite flash function' : function(err, req, res) {
+        req.flash('question', 'Do you?')
+        assert.equal(req.session.flash, 'I Exist');
+      },
+    },
+    
     'when handling a request without a session': {
       topic: function(flash) {
         var self = this;
