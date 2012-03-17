@@ -1,6 +1,6 @@
 {
   "name": "connect-flash",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Flash message middleware for Connect.",
   "author": { "name": "Jared Hanson", "email": "jaredhanson@gmail.com", "url": "http://www.jaredhanson.net/" },
   "repository": {
