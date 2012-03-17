@@ -151,5 +151,38 @@ vows.describe('flash').addBatch({
       },
     },
   },
+  
+  'middleware with an unsafe option': {
+    topic: function() {
+      return flash({ unsafe: true });
+    },
+    
+    'when handling a request with an existing flash function': {
+      topic: function(flash) {
+        var self = this;
+        var req = new MockRequest();
+        req.flash = function(type, msg) {
+          this.session.flash = 'I Exist'
+        }
+        var res = new MockResponse();
+        
+        function next(err) {
+          self.callback(err, req, res);
+        }
+        process.nextTick(function () {
+          flash(req, res, next)
+        });
+      },
+      
+      'should not error' : function(err, req, res) {
+        assert.isNull(err);
+      },
+      'should overwrite flash function' : function(err, req, res) {
+        req.flash('info', 'It works!');
+        assert.lengthOf(Object.keys(req.session.flash), 1);
+        assert.lengthOf(req.session.flash['info'], 1);
+      },
+    },
+  },
 
 }).export(module);
