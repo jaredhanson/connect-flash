@@ -93,13 +93,15 @@ vows.describe('flash').addBatch({
         assert.lengthOf(Object.keys(req.session.flash), 0);
       },
       'should format messages' : function(err, req, res) {
-        req.flash('info', 'Hello %s', 'Jared');
-        var msg = req.flash('info')[0];
-        assert.equal(msg, 'Hello Jared')
+        if (util.format) {
+          req.flash('info', 'Hello %s', 'Jared');
+          var msg = req.flash('info')[0];
+          assert.equal(msg, 'Hello Jared')
         
-        req.flash('info', 'Hello %s %s', 'Jared', 'Hanson');
-        var msg = req.flash('info')[0];
-        assert.equal(msg, 'Hello Jared Hanson')
+          req.flash('info', 'Hello %s %s', 'Jared', 'Hanson');
+          var msg = req.flash('info')[0];
+          assert.equal(msg, 'Hello Jared Hanson')
+        }
       },
       'should return empty array for flash type with no messages' : function(err, req, res) {
         var msgs = req.flash('what');
