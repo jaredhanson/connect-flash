@@ -5,10 +5,10 @@ are written to the flash and cleared after being displayed to the user.  The
 flash is typically used in combination with redirects, ensuring that the message
 is available to the next page that is to be rendered.
 
-This middleware was extracted from Express 2.x, after Express 3.x removed direct
-support for the flash.  connect-flash brings this functionality back to Express
-3.x, as well as any other middleware-compatible framework or application. +1 for
-[radical reusability](http://substack.net/posts/b96642/the-node-js-aesthetic)
+This middleware was extracted from [Express](http://expressjs.com/) 2.x, after
+Express 3.x removed direct support for the flash.  connect-flash brings this
+functionality back to Express 3.x, as well as any other middleware-compatible
+framework or application. +1 for [radical reusability](http://substack.net/posts/b96642/the-node-js-aesthetic)
 
 ## Installation
 
