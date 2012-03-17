@@ -43,7 +43,8 @@ vows.describe('flash').addBatch({
         assert.isFunction(req.flash);
       },
       'should set flash message' : function(err, req, res) {
-        req.flash('error', 'Something went wrong');
+        var count = req.flash('error', 'Something went wrong');
+        assert.equal(count, 1);
         assert.lengthOf(Object.keys(req.session.flash), 1);
         assert.lengthOf(req.session.flash['error'], 1);
       },
@@ -55,7 +56,8 @@ vows.describe('flash').addBatch({
       },
       'should set multiple flash messages' : function(err, req, res) {
         req.flash('info', 'Welcome');
-        req.flash('info', 'Check out this great new feature');
+        var count = req.flash('info', 'Check out this great new feature');
+        assert.equal(count, 2);
         assert.lengthOf(Object.keys(req.session.flash), 1);
         assert.lengthOf(req.session.flash['info'], 2);
       },
