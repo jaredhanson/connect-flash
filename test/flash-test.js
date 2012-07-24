@@ -61,6 +61,13 @@ vows.describe('flash').addBatch({
         assert.lengthOf(Object.keys(req.session.flash), 1);
         assert.lengthOf(req.session.flash['info'], 2);
       },
+      'should set flash messages in one call' : function(err, req, res) {
+        req.flash('warning', ['username required', 'password required']);
+        var msgs = req.flash('warning');
+        assert.lengthOf(msgs, 2);
+        assert.equal(msgs[0], 'username required');
+        assert.equal(msgs[1], 'password required');
+      },
       'should get and clear multiple previously set flash messages' : function(err, req, res) {
         var msgs = req.flash('info');
         assert.lengthOf(msgs, 2);
