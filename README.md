@@ -40,7 +40,7 @@ that can be used for flash messages.
     });
 
     app.get('/', function(req, res){
-      res.render('index', { message: req.flash('info') });
+      res.render('index', { messages: req.flash('info') });
     });
 
 ## Examples
