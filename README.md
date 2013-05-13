@@ -22,26 +22,32 @@ Flash messages are stored in the session.  First, setup sessions as usual by
 enabling `cookieParser` and `session` middleware.  Then, use `flash` middleware
 provided by connect-flash.
 
-    var flash = require('connect-flash');
-    var app = express();
+```javascript
+var flash = require('connect-flash');
+var app = express();
 
-    app.configure(function() {
-      app.use(express.cookieParser('keyboard cat'));
-      app.use(express.session({ cookie: { maxAge: 60000 }}));
-      app.use(flash());
-    });
+app.configure(function() {
+  app.use(express.cookieParser('keyboard cat'));
+  app.use(express.session({ cookie: { maxAge: 60000 }}));
+  app.use(flash());
+});
+```
 
-With `flash` middleware in place, all requests will have `req.flash()` function
+With the `flash` middleware in place, all requests will have a `req.flash()` function
 that can be used for flash messages.
 
-    app.get('/flash', function(req, res){
-      req.flash('info', 'Flash is back!')
-      res.redirect('/');
-    });
+```javascript
+app.get('/flash', function(req, res){
+  // Set a flash message by passing the key, followed by the value, to req.flash().
+  req.flash('info', 'Flash is back!')
+  res.redirect('/');
+});
 
-    app.get('/', function(req, res){
-      res.render('index', { messages: req.flash('info') });
-    });
+app.get('/', function(req, res){
+  // Get an array of flash messages by passing the key to req.flash()
+  res.render('index', { messages: req.flash('info') });
+});
+```
 
 ## Examples
 
