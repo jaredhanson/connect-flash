@@ -1,6 +1,6 @@
 {
   "name": "connect-flash",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Flash message middleware for Connect.",
   "keywords": ["connect", "express", "flash", "messages"],
   "repository": {
