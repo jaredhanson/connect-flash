@@ -2,7 +2,7 @@
   "name": "connect-flash-examples-express3",
   "version": "0.0.0",
   "dependencies": {
-    "express": "git://github.com/visionmedia/express.git",
+    "express": "3.x.x",
     "ejs": "0.6.x"
   }
 }
