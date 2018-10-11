@@ -10,6 +10,12 @@ Express 3.x removed direct support for the flash.  connect-flash brings this
 functionality back to Express 3.x, as well as any other middleware-compatible
 framework or application. +1 for [radical reusability](http://substack.net/posts/b96642/the-node-js-aesthetic).
 
+---
+
+<p align="center"><a href="https://click.linksynergy.com/fs-bin/click?id=D*o7yui4/NM&offerid=507388.7487&type=3&subid=0">The Web Developer Bootcamp</a><br>The only course you need to learn web development - HTML, CSS, JS, Node, and More!</p>
+
+---
+
 ## Install
 
     $ npm install connect-flash
