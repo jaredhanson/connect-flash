@@ -12,7 +12,11 @@ framework or application. +1 for [radical reusability](http://substack.net/posts
 
 ---
 
-<p align="center"><sup>Advertisement</sup><br><a href="https://click.linksynergy.com/link?id=D*o7yui4/NM&offerid=507388.1565838&type=2&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fthe-complete-web-development-bootcamp%2F&u1=kLuTGbJ5MIj5DsRzxguZr3CjzGb0gRdZ3C4KXxP">The Complete 2020 Web Development Bootcamp</a><br>Become a full-stack web developer with just one course. HTML, CSS, Javascript, Node, React, MongoDB and more!</p>
+<p align="center">
+  <sup>Advertisement</sup>
+  <br>
+  <a href="https://click.linksynergy.com/link?id=D*o7yui4/NM&offerid=507388.1565838&type=2&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fthe-complete-web-development-bootcamp%2F&u1=kLuTGbJ5MIj5DsRzxguZr3CjzGb0gRdZ3C4KXxP">The Complete 2020 Web Development Bootcamp</a><br>Become a full-stack web developer with just one course. HTML, CSS, Javascript, Node, React, MongoDB and more!
+</p>
 
 ---
 
